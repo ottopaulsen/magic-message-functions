@@ -29,6 +29,7 @@ Select functions, then select project and TypeScript.
 ## Run locally
 
 ```
+cd functons
 tsc; firebase serve --only functions
 ```
 
@@ -37,6 +38,8 @@ Deploy command:
 ```
 firebase deploy --only functions
 ```
+
+## Useful links
 
 [Firebase Console](https://console.firebase.google.com/project/magic-acf51/overview)
 
@@ -63,7 +66,7 @@ Used by the MMM-MagicMessage MagicMirror module to register a new screen. Body c
     "emails": [
         "email 1",
         "email 2",
-        ...
+        //...
     ]
 }
 ```
@@ -93,6 +96,6 @@ Used by the app to get the name and id of the screens that the authenticated use
         "name": "Screen display name",
         "key": "Unique screen key"
     },
-    ...
+    //...
 ]
 ```
