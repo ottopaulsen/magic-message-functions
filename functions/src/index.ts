@@ -4,7 +4,7 @@
   Firebase: magic
 */
 
-const functions = require('firebase-functions')
+const { onRequest } = require('firebase-functions/v2/https')
 const admin = require('firebase-admin')
 admin.initializeApp()
 const express = require('express')
@@ -123,4 +123,4 @@ require('./screens')(app, db)
 require('./outdatedscreens')(app, db)
 
 console.log('message-function server starting...')
-exports.app = functions.https.onRequest(app)
+exports.app = onRequest(app)
