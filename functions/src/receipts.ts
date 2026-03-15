@@ -7,7 +7,7 @@ module.exports = function (app, db) {
       .update('receipt', 'true')
       .then(() => {
         console.log('Receipt saved for ', msgPath)
-        res.redirect(303, '')
+        res.status(303).redirect('/')
       })
       .catch(error => {
         console.log('Receipt failed: ', error)

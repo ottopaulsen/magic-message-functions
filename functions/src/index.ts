@@ -6,7 +6,7 @@
 
 const functions = require('firebase-functions')
 const admin = require('firebase-admin')
-admin.initializeApp(functions.config().firebase)
+admin.initializeApp()
 const express = require('express')
 const cookieParser = require('cookie-parser')()
 const cors = require('cors')({ origin: true })
@@ -107,6 +107,8 @@ const validateFirebaseIdToken = (req, res, next) => {
 
 app.use(cors)
 app.use(cookieParser)
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use(handleOptions)
 app.use(logRequest)
 app.use(validateFirebaseIdToken)

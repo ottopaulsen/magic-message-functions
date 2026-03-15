@@ -32,7 +32,7 @@ module.exports = function(app, db) {
         const ref = db().collection('screens').doc(secret);
         ref.set(screen).then(() => {
         null
-        res.redirect(303, screen.toString());
+        res.status(303).redirect(screen.toString());
         }).catch((error) => {
         console.log('Screen save failed: ', error);
         })
