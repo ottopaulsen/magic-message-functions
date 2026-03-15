@@ -6,7 +6,7 @@ This component is a service used by the mirror to register, and used by the app 
 
 ## Installation
 
-Clone the repository from github. 
+Clone the repository from github.
 
 In order to deploy to Firebase hosting, you need to init firebase:
 
@@ -23,17 +23,16 @@ cd functions
 npm install
 ```
 
-
 Select functions, then select project and TypeScript.
 
 ## Run locally
 
 ```
-cd functons
+cd functions
 tsc; firebase serve --only functions
 ```
 
-Deploy command: 
+Deploy command:
 
 ```
 firebase deploy --only functions
@@ -60,14 +59,14 @@ In order to use this API, you must authenticate using Google Firebase Auth, and 
 
 Used by the MMM-MagicMessage MagicMirror module to register a new screen. Body contains:
 
-``` json
+```json
 {
-    "name": "Mirror name from config",
-    "emails": [
-        "email 1",
-        "email 2",
-        //...
-    ]
+  "name": "Mirror name from config",
+  "emails": [
+    "email 1",
+    "email 2"
+    //...
+  ]
 }
 ```
 
@@ -76,11 +75,12 @@ The email array is a list of legal users.
 ### POST /screens/:id/messages
 
 Used by the app to send message to mirror. Body:
-``` json
+
+```json
 {
-    "message": "The message to the mirror",
-    "sentBy": "email",
-    "lifetime": 60 // Minutes the message shall live
+  "message": "The message to the mirror",
+  "sentBy": "email",
+  "lifetime": 60 // Minutes the message shall live
 }
 ```
 
@@ -90,12 +90,12 @@ The :id is the screen id. The screen module is using a uuid for this.
 
 Used by the app to get the name and id of the screens that the authenticated user can send messages to. The result is an array of screen objects:
 
-``` json
+```json
 [
-    {
-        "name": "Screen display name",
-        "key": "Unique screen key"
-    },
-    //...
+  {
+    "name": "Screen display name",
+    "key": "Unique screen key"
+  }
+  //...
 ]
 ```
